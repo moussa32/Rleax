@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    background:url('./sky.jpg') no-repeat center center fixed;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    font-family: 'Roboto', sans-serif;
+    display:flex;
+    flex-flow: column nowrap;
+    height: 100vh;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:300px;
+    width: 300px;
+    position:relative;
+    margin:auto;
+    transform:scale(1);
+}
+#text{
+    font-family: 'Cairo', sans-serif;
+    color: #2d2d2d;
+    font-size: 20px;
+}
+.background-border {
+    background: conic-gradient( #d7b9bb 0%, #feece1 40%, #b29398 40%, #d2b5b7 60%, #dde1ea 60%, #d5dbe7 100% );
+    height:320px;
+    width: 320px;
+    position:absolute;
+    top:-10px;
+    left:-10px;
+    z-index: -2;
+    border-radius: 50%;
+}
+#topTitle{
+    color:#fff;
+}
+#bull{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #FDA7DF;
+    height: 100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.pointer-container{
+    position: absolute;
+    top:-40px;
+    left:140px;
+    width:20px;
+    height:190px;
+    animation: movment 7.5s linear forwards infinite;
+    transform-origin: bottom center;
+}
+.pointer{
+    background:#fff;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: block;
+}
+@keyframes movment{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+.container.grow{
+    animation: grow 3s linear forwards; 
+}
+.container.shrink{
+    animation: shrink 3s linear forwards; 
+}
+@keyframes grow{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.3);
+    }
+}
+@keyframes shrink{
+    from{
+        transform:scale(1.3);
+    }
+    to{
+        transform:scale(1);
+    }
+}
